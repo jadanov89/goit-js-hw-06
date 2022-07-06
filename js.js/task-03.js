@@ -12,7 +12,23 @@ const images = [
       alt: "Group of Horses Running",
     },
   ];
-  
+
+const allImages = document.querySelector("ul.gallery");
+  allImages.style.display = "flex";
+  allImages.style.justifyContent = "center";
+  allImages.style.flexDirection = "row";
+  allImages.style.listStyle = "none";
+  allImages.setAttribute("flex-direction", "center", "row");
+
+const gallery = images.map(({ url, alt}) => {
+  return `<li style="margin:10px"><img src = ${url}
+  alt = '${alt}' width="375" height="175"></li>`}).join(' ');
+
+allImages.insertAdjacentHTML('beforeend', ` ${gallery}`);
+
+
+
+  /*
   const addImg = () => {
     const allImages = document.querySelector("ul.gallery");
      allImages.style.display = "flex";
@@ -31,4 +47,6 @@ const images = [
      const contentStyle = document.querySelectorAll("li");
   };
 
-addImg();
+addImg(); 
+*/
+
